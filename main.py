@@ -1,13 +1,14 @@
-import os
-import sys
-from gameplay import gameplay, introscreen
+from gameplay import Gameplay
 import pygame
 
 pygame.init()
+pygame.display.set_caption("Dino Run ")
+
 
 def main():
-    isGameQuit = introscreen()
+    isGameQuit = Gameplay.introscreen()
     if not isGameQuit:
-        gameplay()
+        Gameplay.gameplay()
+
 
 main()

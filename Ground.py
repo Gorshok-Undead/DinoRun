@@ -1,17 +1,18 @@
-from Source import height, LoadImage, screen
+from Source import Source
 
-class Ground():
-    def __init__(self,speed=-5):
-        self.image,self.rect = LoadImage('ground.png', 600, 20, -1)
-        self.image1,self.rect1 = LoadImage('ground.png', 600, 20, -1)
-        self.rect.bottom = height
-        self.rect1.bottom = height
+
+class Ground:
+    def __init__(self, speed=-5):
+        self.image, self.rect = Source.LoadImage('ground.png', 600, 20, -1)
+        self.image1, self.rect1 = Source.LoadImage('ground.png', 600, 20, -1)
+        self.rect.bottom = Source.height
+        self.rect1.bottom = Source.height
         self.rect1.left = self.rect.right
         self.speed = speed
 
     def draw(self):
-        screen.blit(self.image,self.rect)
-        screen.blit(self.image1,self.rect1)
+        Source.screen.blit(self.image, self.rect)
+        Source.screen.blit(self.image1, self.rect1)
 
     def update(self):
         self.rect.left += self.speed
