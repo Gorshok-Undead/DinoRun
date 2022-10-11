@@ -59,7 +59,7 @@ class Dino:
             self.rect.width = self.stand_pos_width
         else:
             self.image = self.images1[(self.index) % 2]
-            self.rect.Source.width = self.duck_pos_width
+            self.rect.width = self.duck_pos_width
 
         self.rect = self.rect.move(self.movement)
         self.checkbounds()
